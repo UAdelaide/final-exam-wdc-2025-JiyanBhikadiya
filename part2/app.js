@@ -20,6 +20,10 @@ app.use(express.static(path.join(__dirname, '/public')));
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
+
+app.use('/api/walks', walkRoutes);
+app.use('/api/users', userRoutes);
+
 app.get('/api/dogs',async (req,res,next) => {
     try{
         const [dogs] = await db.execute(`
@@ -31,9 +35,6 @@ app.get('/api/dogs',async (req,res,next) => {
         res.status(500).json({ error: 'Failed to fetch Dogs' });
     }
 });
-
-app.use('/api/walks', walkRoutes);
-app.use('/api/users', userRoutes);
 
 // Export the app instead of listening here
 module.exports = app;
