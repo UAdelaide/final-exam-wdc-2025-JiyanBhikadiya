@@ -24,9 +24,6 @@ let db;
             password: ''
         });
 
-        let sqlFile = path.join(__dirname,'dogwalks.sql');
-        let sqlQuery = readFileSync(sqlFile,"utf8");
-
         await db.query(sqlQuery);
         await db.changeUser({ database: "DogWalkService" });
 
