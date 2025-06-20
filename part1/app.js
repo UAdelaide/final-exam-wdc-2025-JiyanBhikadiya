@@ -29,6 +29,10 @@ let db;
         let sqlQuery = readFileSync(sqlFile,"utf8");
 
         await db.query(sqlQuery);
+
+        app.use(req,resizeBy,next){
+
+        }
     }
     catch(error){
         //
