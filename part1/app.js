@@ -24,7 +24,8 @@ let db;
             password: ''
         });
 
-        let sqlFile = path.join();
+        let sqlFile = path.join(__dirname,'dogwalks.sql');
+        
     }
     catch(error){
         //
