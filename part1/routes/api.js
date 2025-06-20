@@ -23,10 +23,12 @@ router.get('/walkrequests/open',async (req,res,next) => {
         `);
         res.json(request);
     }catch(error){
-        res.status(500).json({ error: 'Failed to fetch Dogs' });
+        res.status(500).json({ error: 'Failed to fetch Requests' });
     }
 });
 
-router.get('/walkers/summary');
+router.get('/walkers/summary',async (req,res,next) => {
+
+});
 
 module.exports = router;
