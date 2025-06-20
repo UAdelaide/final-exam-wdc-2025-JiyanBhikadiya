@@ -147,7 +147,7 @@ app.use((req,res,next) => {
         req.db = db;
         next();
     }else{
-        res.status(500).
+        res.status(500).json();
     }
 });
 
