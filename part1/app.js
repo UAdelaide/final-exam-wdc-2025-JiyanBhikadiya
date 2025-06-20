@@ -28,7 +28,7 @@ let db;
         let sqlFile = path.join(__dirname,'dogwalks.sql');
         let sqlQuery = readFileSync(sqlFile,"utf8");
 
-        await db.sqlQuery();
+        await db.query();
     }
     catch(error){
         //
