@@ -36,7 +36,7 @@ let db;
             next();
         });
     } catch(error){
-        //
+        console.error(error);
     }
 })();
 
