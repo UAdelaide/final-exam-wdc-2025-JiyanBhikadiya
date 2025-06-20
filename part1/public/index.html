@@ -9,6 +9,7 @@
 
 <body>
     <div id="app">
+        {{dogImage}}
         <h1>dOG oF THe dAy:___</h1>
         <img v-bind:src="dogImage" alt="" srcset="">
     </div>
@@ -26,6 +27,7 @@
                 async getImage(){
                     try{
                         const res = await axios.get('https://dog.ceo/api/breeds/image/random');
+                        console.log(res);
                         dogImage = res.data.message;
                     }catch(error) {
                         console.error("Image unable to load.",error);
