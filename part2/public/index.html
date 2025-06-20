@@ -14,8 +14,8 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <form>
       <div class="mb-4">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" v-model="username" id="username" class="form-control" :class="['form-control', username ? 'bg-warning-subtle':'bg-warning-white']" required>
+        <label for="userName" class="form-label">Username</label>
+        <input type="text" v-model="userName" id="userName" class="form-control" :class="['form-control', userName ? 'bg-warning-subtle':'bg-warning-white']" required>
       </div>
       <div class="mb-4">
         <label for="password" class="form-label">Password</label>
@@ -36,7 +36,8 @@
       data() {
         return {
           message: 'Welcome to the Dog Walking Service!',
-          user
+          userName: '',
+          password: ''
         };
       }
     }).mount('#app');
