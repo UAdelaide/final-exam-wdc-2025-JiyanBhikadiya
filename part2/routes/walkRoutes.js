@@ -68,7 +68,7 @@ router.get('/dogs',async (req,res,next) => {
   console.log(owner_id);
 
   try{
-    const [dogs] = await req.db.execute(
+    const [dogs] = await db.execute(
       'SELECT dog_id,name,size FROM Dogs WHERE owner_id = ?',[owner_id]
     );
 
