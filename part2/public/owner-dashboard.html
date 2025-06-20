@@ -139,11 +139,10 @@
         }
 
         async function getDogsOfCurrentUser() {
-          console.log("object");
           try {
             const res = await axios.get('/api/walks/dogs');
             dogs.value = res.data;
-            console.log(res.data);
+            console.log(res.json(res.data));
           } catch (error) {
             console.error(error);
           }
