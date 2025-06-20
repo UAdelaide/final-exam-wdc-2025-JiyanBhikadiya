@@ -100,7 +100,6 @@
         try {
             const res = await axios.get('http://localhost:8081/api/dogs');
             const dogsAll = res.data;
-            console.log(dogsAll);
 
             const imageFill = dogsAll.map(async (dog) => {
               const img = await axios.get('https://dog.ceo/api/breeds/image/random');
