@@ -35,7 +35,7 @@ router.get('/walkers/summary',async (req,res,next) => {
             JOIN Users ON Users.user_id = Dogs.owner_id
             WHERE WalkRequests.status = 'open'
         `);
-        res.json(request);
+        res.json(summary);
     }catch(error){
         res.status(500).json({ error: 'Failed to fetch Summary' });
     }
