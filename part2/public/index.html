@@ -23,7 +23,7 @@
         <input type="text" v-model="password" id="password" class="form-control" :class="['form-control', password ? 'bg-warning-subtle':'bg-warning-white']" required>
       </div>
       <div class="mb-4">
-        <p v-if="error">{{error}}</p>
+        <p v-if="error" class="text-danger">{{error}}</p>
       </div>
 
       <button type="button" class="btn btn-outline-primary" @click="login()">Log In</button>
@@ -59,7 +59,7 @@
               window.location.href = 'walker-dashboard.html';
             }
           }catch(error){
-            // this.error = error.res.data.error;
+            this.error = error.response.data.error;
             console.error(error.response.data.error);
           }
         }
