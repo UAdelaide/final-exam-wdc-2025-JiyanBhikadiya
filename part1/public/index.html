@@ -17,8 +17,10 @@
         const { createApp } = Vue;
 
         createApp({
-            data: {
-                dogImage: ""
+            data() {
+                return{
+                    dogImage: ""
+                };
             },
             methods: {
                 async getImage(){
