@@ -6,6 +6,7 @@ var mysql = require('mysql2/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const { readFileSync } = require('fs');
 
 var app = express();
 
@@ -25,7 +26,7 @@ let db;
         });
 
         let sqlFile = path.join(__dirname,'dogwalks.sql');
-        let sqlQuery = re
+        let sqlQuery = readFileSync(sqlFile,"utf-8");
     }
     catch(error){
         //
