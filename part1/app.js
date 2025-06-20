@@ -20,6 +20,9 @@ let db;
     try{
         const connection = await mysql.createConnection();
     }
+    catch(error){
+
+    }
 })();
 
 app.use(express.static(path.join(__dirname, 'public')));
