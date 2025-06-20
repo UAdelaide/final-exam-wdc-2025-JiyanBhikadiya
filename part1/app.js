@@ -2,11 +2,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mysql = require('mysql2/promise');
+// var mysql = require('mysql2/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const { readFileSync } = require('fs');
+// const { readFileSync } = require('fs');
 
 var app = express();
 
@@ -15,30 +15,30 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-let db;
+// let db;
 
-(async () => {
-    try{
-        db = await mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: ''
-        });
+// (async () => {
+//     try{
+//         db = await mysql.createConnection({
+//             host: 'localhost',
+//             user: 'root',
+//             password: ''
+//         });
 
-        let sqlFile = path.join(__dirname,'dogwalks.sql');
-        let sqlQuery = readFileSync(sqlFile,"utf8");
+//         let sqlFile = path.join(__dirname,'dogwalks.sql');
+//         let sqlQuery = readFileSync(sqlFile,"utf8");
 
-        await db.query(sqlQuery);
-        await db.changeUser({ database: "DogWalkService" });
+//         await db.query(sqlQuery);
+//         await db.changeUser({ database: "DogWalkService" });
 
-        app.use((req,res,next) => {
-            req.db = db;
-            next();
-        });
-    } catch(error){
-        console.error(error);
-    }
-})();
+//         app.use((req,res,next) => {
+//             req.db = db;
+//             next();
+//         });
+//     } catch(error){
+//         console.error(error);
+//     }
+// })();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
