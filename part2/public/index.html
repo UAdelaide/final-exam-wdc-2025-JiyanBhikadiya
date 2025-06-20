@@ -15,8 +15,8 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <form>
       <div class="mb-4">
-        <label for="email" class="form-label">Email</label>
-        <input type="text" v-model="email" id="email" class="form-control" :class="['form-control', email ? 'bg-warning-subtle':'bg-warning-white']" required>
+        <label for="userName" class="form-label">Username</label>
+        <input type="text" v-model="userName" id="userName" class="form-control" :class="['form-control', userName ? 'bg-warning-subtle':'bg-warning-white']" required>
       </div>
       <div class="mb-4">
         <label for="password" class="form-label">Password</label>
@@ -37,15 +37,15 @@
       data() {
         return {
           message: 'Welcome to the Dog Walking Service!',
-          email: '',
+          userName: '',
           password: ''
         };
       },
       methods: {
         async login(){
-          // console.log(this.email,this.password);
+          console.log(this.userName,this.password);
           const res = await axios.post('/api/users/login',{
-            email: this.email,
+            userName: this.userName,
             password: this.password
           });
 
