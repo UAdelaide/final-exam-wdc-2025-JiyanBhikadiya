@@ -53,7 +53,7 @@ router.post('/login', async (req, res) => {
 
     req.session.user = {
       id: user.user_id,
-      username: user.username,
+      username: username,
       role: user.role
     };
 
