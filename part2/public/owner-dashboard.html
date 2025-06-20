@@ -142,7 +142,7 @@
           try {
             const res = await axios.get('/api/walks/dogs');
             dogs.value = res.data;
-            console.log(res.data);
+            console.log(dogs.value);
           } catch (error) {
             console.error(error);
           }
