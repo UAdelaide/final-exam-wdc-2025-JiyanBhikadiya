@@ -30,13 +30,10 @@ let db;
 
         await db.query(sqlQuery);
 
-        app.use(() => {
+        app.use((req,res,next) => {
             req.db = db;
             next();
         });
-
-        app.use(req,res,next) => {
-        };
     }
     catch(error){
         //
