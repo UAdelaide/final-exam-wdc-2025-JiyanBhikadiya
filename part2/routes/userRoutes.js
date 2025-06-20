@@ -70,7 +70,7 @@ router.post('/logout',async (req,res,next) => {
     }
 
     res.clearCookie();
-    res.json({message: "logout"});
+    res.json({ message: "logout" });
   });
 });
 
