@@ -18,13 +18,13 @@ let db;
 
 (async () => {
     try{
-        db = await mysql.createConnection({
+        let connection = await mysql.createConnection({
             host: 'localhost',
             user: 'root',
             password: ''
         });
 
-        await db.query(sqlQuery);
+        await connection.query(sqlQuery);
         await db.changeUser({ database: "DogWalkService" });
 
         app.use((req,res,next) => {
