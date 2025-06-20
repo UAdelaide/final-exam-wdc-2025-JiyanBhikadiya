@@ -54,7 +54,9 @@
             }else if(res.data.user.role === 'walker'){
               window.location.href = 'walker-dashboard.html';
             }
-          }catch ()
+          }catch(error){
+            console.error();
+          }
         }
       }
     }).mount('#app');
