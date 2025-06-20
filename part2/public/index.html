@@ -42,11 +42,11 @@
         };
       },
       methods: {
-        login(){
-          const res = await axios.post('/api/login'){
+        async login(){
+          const res = await axios.post('/api/login',{
             userName: this.userName,
             password: this.password
-          }
+          });
         }
       }
     }).mount('#app');
