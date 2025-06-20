@@ -43,7 +43,7 @@
       },
       methods: {
         async login(){
-          const res = await axios.post('/api/login',{
+          const res = await axios.post('/api/users/login',{
             userName: this.userName,
             password: this.password
           });
