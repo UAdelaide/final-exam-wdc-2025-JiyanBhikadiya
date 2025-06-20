@@ -94,7 +94,7 @@
 
           const imageFill = dogs.map(async (dog) => {
             const img = await axios.get('https://dog.ceo/api/breeds/image/random');
-            
+            dog.image=img.data.message;
           })
         }
       },
