@@ -16,7 +16,7 @@ router.get('/dogs',async (req,res,next) => {
 router.get('/walkrequests/open',async (req,res,next) => {
     try{
         const [request] = await req.db.execute(`
-            SELECT request_id,
+            SELECT request_id,Dogs.dog_name,requested_time
         `);
         res.json(request);
     }catch(error){
