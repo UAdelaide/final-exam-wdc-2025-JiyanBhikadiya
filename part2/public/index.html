@@ -67,6 +67,7 @@
           username: '',
           password: '',
           error: '',
+          allDogs: []
         };
       },
       methods: {
@@ -90,15 +91,15 @@
         },
         async allDogs(){
           const res = await axios.get('/api/dogs');
-          const dogsAll = res.data;
+          const dogs = res.data;
 
-          const imageFill = dogsAll.map(async (dog) => {
+          const imageFill = dogs.map(async (dog) => {
             const img = await axios.get('https://dog.ceo/api/breeds/image/random');
             dog.image = img.data.message;
             return dog;
           });
 
-          this.dogs
+          this.allDogs = await
         }
       },
       mounted(){
