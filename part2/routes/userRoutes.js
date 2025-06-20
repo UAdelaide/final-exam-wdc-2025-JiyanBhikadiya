@@ -53,7 +53,7 @@ router.post('/login', async (req, res) => {
 
     req.session.user = {
       id: user.user_id,
-      username: username,
+      username: user.username,
       role: user.role
     };
 
@@ -69,7 +69,7 @@ router.post('/logout',async (req,res,next) => {
       return res.status(500).json({ message: "Logout unsuccessful" });
     }
 
-    res.clearCookie("connect.sid");
+    res.clearCookie("co");
     res.json({ message: "logout" });
   });
 });
