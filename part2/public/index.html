@@ -99,6 +99,7 @@
       async mounted() {
         try {
             const res = await axios.get('http://localhost:8081/api/dogs');
+            console.log(res);
             const dogsAll = res.data;
 
             const imageFill = dogsAll.map(async (dog) => {
