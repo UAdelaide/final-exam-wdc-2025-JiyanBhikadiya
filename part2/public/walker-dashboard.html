@@ -55,6 +55,14 @@
           }
         }
 
+        async function logout(){
+          axios.post('/api/users/logout').then(() => {
+            window.location.href = 'index.html'
+          }).catch((error) => {
+            console.error(error);
+          })
+        }
+
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
@@ -82,6 +90,7 @@
           walks,
           message,
           error,
+          logout,
           applyToWalk
         };
       }
