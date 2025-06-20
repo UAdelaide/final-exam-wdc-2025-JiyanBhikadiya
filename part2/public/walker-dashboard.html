@@ -92,7 +92,7 @@
         async function getCurrentUser() {
           try {
             const res = await axios.get('/api/users/me');
-            return res.data.user_id;
+            return res.data.id;
           }catch (error) {
             console.error("Current user unavilable", error);
             return null;
