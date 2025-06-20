@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
+const { getSystemErrorMap } = require('util');
 
 
 app.use('/api/walks', walkRoutes);
@@ -32,6 +33,7 @@ app.get('/api/dogs',async (req,res,next) => {
         `);
         res.json(dogs);
     }catch(error){
+        console.log(error);
         res.status(500).json({ error: 'Failed to fetch Dogs' });
     }
 });
