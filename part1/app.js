@@ -17,8 +17,10 @@ app.use(cookieParser());
 let db;
 
 (async () => {
-    
-})
+    try{
+        
+    }
+})();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
