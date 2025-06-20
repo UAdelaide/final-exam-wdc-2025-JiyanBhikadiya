@@ -63,7 +63,9 @@
             console.error(error.response.data.error);
           }
         },
-        async reload
+        async reload(){
+          this.error = "";
+        }
       }
     }).mount('#app');
   </script>
