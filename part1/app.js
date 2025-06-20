@@ -145,8 +145,9 @@ let db;
 app.use((req,res,next) => {
     if(db){
         req.db = db;
-
-        
+        next();
+    }else{
+        res.
     }
 });
 
