@@ -89,7 +89,8 @@
           }
         },
         async allDogs(){
-          const res = await
+          const res = await axios.get('/api/dogs');
+          const dogs = res.
         }
       },
       mounted(){
