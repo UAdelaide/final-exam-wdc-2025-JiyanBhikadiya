@@ -73,7 +73,7 @@
           username: '',
           password: '',
           error: '',
-          allDogs: []
+          dogs: []
         };
       },
       methods: {
@@ -106,7 +106,7 @@
               return dog;
             });
 
-            this.allDogs = await Promise.all(imageFill);
+            this.dogs = await Promise.all(imageFill);
           }catch (error){
             console.error("Dog load unsuccessful",error);
           }
