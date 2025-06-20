@@ -95,22 +95,6 @@
             console.error(error.response.data.error);
           }
         },
-        async func allDogs() {
-          try {
-            const res = await axios.get('/api/dogs');
-            const dogsAll = res.data;
-
-            const imageFill = dogsAll.map(async (dog) => {
-              const img = await axios.get('https://dog.ceo/api/breeds/image/random');
-              dog.image = img.data.message;
-              return dog;
-            });
-
-            this.dogs = await Promise.all(imageFill);
-          }catch (error){
-            console.error("Dog load unsuccessful",error);
-          }
-        }
       },
       mounted() {
         allDogs();
