@@ -106,15 +106,14 @@ let db;
             `);
         }
         // Insert data if table is empty
-        const [rows2] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+        const [rows2] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
         if (rows2[0].count === 0) {
             await db.execute(`
-                INSERT INTO Users(username,email,password_hash,role) VALUES
-                ('alice123','alice@example.com','hashed123','owner'),
-                ('bobwalker','bob@example.com','hashed456','walker'),
-                ('carol123','carol@example.com','hashed789','owner'),
-                ('jiyan123','jiyan@example.com','jiyan123','owner'),
-                ('jiyanwalker','jbwalk@example.com','jbwalk123','walker');
+                ((SELECT user_id FROM Users WHERE username = 'alice123'),'Max','medium'),
+                ((SELECT user_id FROM Users WHERE username = 'carol123'),'Bella','small'),
+                ((SELECT user_id FROM Users WHERE username = 'alice123'),'Rocko','large'),
+                ((SELECT user_id FROM Users WHERE username = 'jiyan123'),'Dollar','large'),
+                ((SELECT user_id FROM Users WHERE username = 'jiyan123'),'Visky','medium');
             `);
         }
         // Insert data if table is empty
