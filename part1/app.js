@@ -29,7 +29,7 @@ let db;
         let sqlQuery = readFileSync(sqlFile,"utf8");
 
         await db.query(sqlQuery);
-        await db.changeUser({database: "DogWalkService"});
+        await db.changeUser({ database: "DogWalkService" });
 
         app.use((req,res,next) => {
             req.db = db;
