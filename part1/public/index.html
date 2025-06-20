@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Express</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.10.0/axios.min.js" integrity="sha512-WkZrEcQ5LMyNy6Y2PQf+Tu3vMcsmKKRKuPXtJSTHQJ3mpuvLRlA5dlDDhrrcXfyWr6Z/y3wIMfjfqVFO/gDZYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.10.0/axios.min.js"
+        integrity="sha512-WkZrEcQ5LMyNy6Y2PQf+Tu3vMcsmKKRKuPXtJSTHQJ3mpuvLRlA5dlDDhrrcXfyWr6Z/y3wIMfjfqVFO/gDZYQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        body{
+        body {
             /* background-color: #A2AD00; */
             background-color: #FFFF00;
             color: white;
@@ -19,6 +22,9 @@
 <body>
     <div id="app">
         <h1>dOG oF THe dAy:___</h1>
+        <pre>Ziya the white Malamute is five years old and 87 pounds of princess. She loves sitting on the back porch and enjoying the view of the woods and other animals, playing with her little sister Nyx, hugs from her mom (she is not a kisser), playing games of chase, lots of petting and attention, she is a doggie alarm clock and always tells you when it's time for her treats. She also loves human treats to and is not too proud to beg. She hates baths, getting her nails trimmed, and the vet.
+
+     Ziya and her sister both love to tell you when they want their treats and to go play outside, and telling them "No" only makes them protest louder. They also love relaxing on the couch on their down time. They love attention and frozen sugar free applesauce cups, and know how to get both. They both love walks in the woods and playing in the creek even though neither like bath time</pre>
         <img v-bind:src="dogImage" alt="Hilo, tHis si a Imagfe" srcset="" height="1000px">
         <button>cLicK fOR Preev ImaGe.......</button>
         <button>cLicK fOR neXT iMAGe.......</button>
@@ -30,18 +36,18 @@
 
         createApp({
             data() {
-                return{
+                return {
                     dogImage: ""
                 };
             },
             methods: {
-                async getImage(){
-                    try{
+                async getImage() {
+                    try {
                         const res = await axios.get('https://dog.ceo/api/breeds/image/random');
                         this.dogImage = res.data.message;
                         console.log(dogImage);
-                    }catch(error) {
-                        console.error("Image unable to load.",error);
+                    } catch (error) {
+                        console.error("Image unable to load.", error);
                     }
                 }
             },
@@ -51,4 +57,5 @@
         }).mount("#app");
     </script>
 </body>
+
 </html>
