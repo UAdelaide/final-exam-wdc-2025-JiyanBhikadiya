@@ -142,7 +142,13 @@ let db;
     }
 })();
 
-app.use(req,res,next);
+app.use((req,res,next) => {
+    if(db){
+        req.db = db;
+
+        
+    }
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 
