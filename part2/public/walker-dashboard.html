@@ -89,7 +89,7 @@
 
         async function getDogsOfCurrentUser(){
           try{
-            const res = await axios.get();
+            const res = await axios.get('/api/walks/getdogs');
           } catch(error){
             console.error(error);
           }
