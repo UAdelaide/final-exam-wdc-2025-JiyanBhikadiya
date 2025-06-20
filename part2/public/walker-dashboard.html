@@ -89,7 +89,8 @@
 
         async function getCurrentUser() {
           try {
-            const res = await axios.get();
+            const res = await axios.get('/api/users/me');
+            
           }catch (error) {
 
           }
