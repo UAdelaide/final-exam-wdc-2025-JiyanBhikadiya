@@ -20,6 +20,18 @@ app.use(express.static(path.join(__dirname, '/public')));
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
+app.get('/api/dogs',async (req,res,next) => {
+    try{
+        const [dogs] = await db.execute(`
+            SELECT name AS dog_name,size,Users.username AS owner_username FROM Dogs
+            JOIN Users ON Users.user_id = Dogs.owner_id
+        `);
+        res.json(dogs);
+    }catch(error){
+        res.status(500).json({ error: 'Failed to fetch Dogs' });
+    }
+});
+
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
