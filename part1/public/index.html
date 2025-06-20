@@ -26,10 +26,11 @@
                         const res = await axios.get('https://dog.ceo/api/breeds/image/random');
                         dogImage = res.data.message;
                     }catch(error) {
-                        console.error("Image unable to load.",);
+                        console.error("Image unable to load.",error);
                     }
                 }
-            }
+            },
+            mounted:
         }).moubt("#app");
     </script>
 </body>
