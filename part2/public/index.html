@@ -55,7 +55,7 @@
               window.location.href = 'walker-dashboard.html';
             }
           }catch(error){
-            console.error();
+            console.error(error.res.data.error);
           }
         }
       }
