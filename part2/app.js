@@ -5,6 +5,10 @@ const session = require('express-session');
 
 const app = express();
 
+app.use(session({
+    secret: 
+}));
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
