@@ -67,9 +67,9 @@ router.get('/dogs',async (req,res,next) => {
   let owner_id = req.session.user.id;
 
   try{
-    
-  }catch(error){
 
+  }catch(error){
+    res.status(500);
   }
 });
 
