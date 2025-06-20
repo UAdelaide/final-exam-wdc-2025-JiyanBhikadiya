@@ -65,7 +65,6 @@ router.get('/dogs',async (req,res,next) => {
   }
 
   let owner_id = req.session.user.id;
-  console.log(owner_id);
 
   try{
     const [dogs] = await db.execute(
