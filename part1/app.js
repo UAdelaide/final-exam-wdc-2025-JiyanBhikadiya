@@ -25,7 +25,7 @@ let db;
         });
 
         let sqlFile = path.join(__dirname,'dogwalks.sql');
-        
+        let sqlQuery = re
     }
     catch(error){
         //
