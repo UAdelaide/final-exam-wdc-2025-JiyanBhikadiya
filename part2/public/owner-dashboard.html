@@ -141,7 +141,7 @@
         async function getDogsOfCurrentUser() {
           try {
             const res = await axios.get('/api/walks/dogs');
-            dogs.value = res.data;
+            dogs = res.data;
             console.log(dogs.value);
           } catch (error) {
             console.error(error);
