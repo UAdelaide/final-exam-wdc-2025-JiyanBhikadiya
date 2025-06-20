@@ -99,7 +99,7 @@
             return dog;
           });
 
-          this.allDogs = await
+          this.allDogs = await Promise.all(imageFill);
         }
       },
       mounted(){
