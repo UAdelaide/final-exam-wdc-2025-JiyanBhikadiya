@@ -108,7 +108,7 @@
 
             this.allDogs = await Promise.all(imageFill);
           }catch (error){
-            console.log();
+            console.error("Dog load unsuccessful",error);
           }
         }
       },
