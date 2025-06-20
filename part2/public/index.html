@@ -58,17 +58,12 @@
             }else if(res.data.user.role === 'walker'){
               window.location.href = 'walker-dashboard.html';
             }
+            this.error = '';
           }catch(error){
             this.error = error.response.data.error;
             console.error(error.response.data.error);
           }
-        },
-        async reload(){
-          this.error = "";
         }
-      },
-      mounted() {
-        reload();
       }
     }).mount('#app');
   </script>
