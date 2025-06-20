@@ -122,7 +122,9 @@
         async function logout(){
           axios.post('/api/users/logout').then(() => {
             window.location.href = 'index.html'
-          }).catch()
+          }).catch((error) => {
+            console.error(error);
+          })
         }
 
         onMounted(() => {
