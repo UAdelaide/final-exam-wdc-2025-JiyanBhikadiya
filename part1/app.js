@@ -117,7 +117,7 @@ let db;
             `);
         }
         // Insert data if table is empty
-        const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+        const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM  WalkRequests');
         if (rows3[0].count === 0) {
             await db.execute(`
                 INSERT INTO WalkRequests (dog_id,requested_time,duration_minutes,location,status) VALUES
