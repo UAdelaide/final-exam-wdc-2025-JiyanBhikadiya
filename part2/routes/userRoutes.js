@@ -37,14 +37,14 @@ router.get('/me', (req, res) => {
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
-  const { username, password } = req.body;
-  console.log(username,password);
+  const { userName, password } = req.body;
+  console.log(userName,password);
 
   try {
     const [rows] = await db.query(`
       SELECT user_id, email, role FROM Users
       WHERE username = ? AND password_hash = ?
-    `, [username, password]);
+    `, [userName, password]);
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
