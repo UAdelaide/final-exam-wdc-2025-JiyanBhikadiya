@@ -69,7 +69,7 @@ router.post('/logout',async (req,res,next) => {
       return res.status(500).json({ message: "Logout unsuccessful" });
     }
 
-    res.clearCookie();
+    res.clearCookie("connect.sid");
     res.json({ message: "logout" });
   });
 });
