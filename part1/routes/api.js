@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/dogs',async (req,res,next) => {
     try{
-        const [rows1] = await 
+        const [rows] = await req.db.ex
     }
 });
 
