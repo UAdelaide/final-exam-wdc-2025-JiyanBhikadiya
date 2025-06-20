@@ -147,7 +147,7 @@ app.use((req,res,next) => {
         req.db = db;
         next();
     }else{
-        res.status(500).json();
+        res.status(500).json({ error: "Error setting up database." });
     }
 });
 
