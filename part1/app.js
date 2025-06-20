@@ -24,7 +24,7 @@ let db;
             password: ''
         });
 
-        let 
+        let sqlFile = path.join();
     }
     catch(error){
         //
