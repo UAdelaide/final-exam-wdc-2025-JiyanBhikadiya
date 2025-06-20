@@ -121,8 +121,8 @@
 
         async function logout(){
           axios.post('/api/users/logout').then(() => {
-            window.location.href = 
-          })
+            window.location.href = 'index.html'
+          }).catch()
         }
 
         onMounted(() => {
