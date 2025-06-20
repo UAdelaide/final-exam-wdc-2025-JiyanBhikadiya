@@ -18,7 +18,10 @@ let db;
 
 (async () => {
     try{
-        const connection = await mysql.createConnection();
+        const connection = await mysql.createConnection({
+            host: 'localhost',
+            user
+        });
     }
     catch(error){
         //
