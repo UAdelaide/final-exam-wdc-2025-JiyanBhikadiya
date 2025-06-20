@@ -67,7 +67,9 @@ router.get('/dogs',async (req,res,next) => {
   let owner_id = req.session.user.id;
 
   try{
-    const[]
+    const [dogs] = await req.db.execute(
+      'SELECT '
+    )
   }catch(error){
     res.status(500).json({ message: 'Failed to load dogs' }, error);
   }
