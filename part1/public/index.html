@@ -27,8 +27,8 @@
                 async getImage(){
                     try{
                         const res = await axios.get('https://dog.ceo/api/breeds/image/random');
-                        console.log(res.data.message);
                         dogImage = res.data.message;
+                        console.log(dogImage);
                     }catch(error) {
                         console.error("Image unable to load.",error);
                     }
