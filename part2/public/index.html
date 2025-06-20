@@ -95,7 +95,7 @@
             console.error(error.response.data.error);
           }
         },
-        async allDogs() {
+        async func allDogs() {
           try {
             const res = await axios.get('/api/dogs');
             const dogsAll = res.data;
