@@ -87,16 +87,6 @@
           }
         }
 
-        async function getDogsOfCurrentUser(){
-          console.log("object");
-          try{
-            const res = await axios.get('/api/walks/getdogs');
-            console.log(res);
-          } catch(error){
-            console.error(error);
-          }
-        }
-
         onMounted(() => {
           loadWalkRequests();
           getDogsOfCurrentUser();
