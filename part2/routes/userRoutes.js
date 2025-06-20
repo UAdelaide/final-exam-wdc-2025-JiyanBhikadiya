@@ -68,6 +68,9 @@ router.post('/logout',async (req,res,next) => {
     if(error){
       return res.status(500).json({ message: "Logout unsuccessful" });
     }
+
+    res.clearCookie();
+    res.json
   });
 });
 
