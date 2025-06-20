@@ -15,10 +15,10 @@ router.get('/dogs',async (req,res,next) => {
 
 router.get('/walkrequests/open',async (req,res,next) => {
     try{
-        const [rows] = await req.db.execute(`
+        const [request] = await req.db.execute(`
 
         `);
-        res.json(rows);
+        res.json(request);
     }catch(error){
         res.status(500).json({ error: 'Failed to fetch Dogs' });
     }
