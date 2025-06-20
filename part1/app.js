@@ -114,16 +114,16 @@ let db;
             `);
         }
         // // Insert data if table is empty
-        // const [rows2] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
-        // if (rows2[0].count === 0) {
-        //     await db.execute(`
-        //         ((SELECT user_id FROM Users WHERE username = 'alice123'),'Max','medium'),
-        //         ((SELECT user_id FROM Users WHERE username = 'carol123'),'Bella','small'),
-        //         ((SELECT user_id FROM Users WHERE username = 'alice123'),'Rocko','large'),
-        //         ((SELECT user_id FROM Users WHERE username = 'jiyan123'),'Dollar','large'),
-        //         ((SELECT user_id FROM Users WHERE username = 'jiyan123'),'Visky','medium');
-        //     `);
-        // }
+        const [rows2] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+        if (rows2[0].count === 0) {
+            await db.execute(`
+                ((SELECT user_id FROM Users WHERE username = 'alice123'),'Max','medium'),
+                ((SELECT user_id FROM Users WHERE username = 'carol123'),'Bella','small'),
+                ((SELECT user_id FROM Users WHERE username = 'alice123'),'Rocko','large'),
+                ((SELECT user_id FROM Users WHERE username = 'jiyan123'),'Dollar','large'),
+                ((SELECT user_id FROM Users WHERE username = 'jiyan123'),'Visky','medium');
+            `);
+        }
         // // Insert data if table is empty
         // const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM  WalkRequests');
         // if (rows3[0].count === 0) {
