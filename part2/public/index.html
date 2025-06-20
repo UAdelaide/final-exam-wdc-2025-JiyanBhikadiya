@@ -49,7 +49,9 @@
             password: this.password
           });
 
-          console.log(res);
+          if(res.data.user.role === 'owner'){
+            window.location.href
+          }
         }
       }
     }).mount('#app');
