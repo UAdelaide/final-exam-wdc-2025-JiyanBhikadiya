@@ -34,8 +34,7 @@ let db;
             req.db = db;
             next();
         });
-    }
-    catch(error){
+    } catch(error){
         //
     }
 })();
