@@ -68,7 +68,7 @@ router.get('/dogs',async (req,res,next) => {
 
   try{
     const [dogs] = await req.db.execute(
-      'SELECT '
+      'SELECT dog_id'
     )
   }catch(error){
     res.status(500).json({ message: 'Failed to load dogs' }, error);
