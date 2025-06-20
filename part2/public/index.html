@@ -41,13 +41,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr v-for="dog in dogs" :key="">
           <td>{{dog.dog_id}}</td>
           <td>{{dog.name}}</td>
           <td>{{dog.size}}</td>
           <td>{{dog.owner_id}}</td>
           <td>
-            <img :src="dog.image" alt="" width="100px" height="100px" class="img-">
+            <img :src="dog.image" alt="" width="100px" height="100px" class="img-thumbnail">
           </td>
         </tr>
       </tbody>
