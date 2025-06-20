@@ -21,7 +21,7 @@ let db;
         const connection = await mysql.createConnection();
     }
     catch(error){
-
+        //
     }
 })();
 
